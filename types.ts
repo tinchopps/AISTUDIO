@@ -17,4 +17,5 @@ export interface Album {
   coverImage: string;
   date: string;
   media: MediaItem[];
+  isLegendary?: boolean;
 }

@@ -25,6 +25,43 @@ const App: React.FC = () => {
     if (storedAuth === "true") {
       setIsAuthenticated(true);
     }
+
+    // Handle browser back/forward buttons
+    const handlePopState = (event: PopStateEvent) => {
+      const state = event.state;
+      
+      // If we have no state or state is explicitly gallery
+      if (!state || state.view === 'gallery') {
+        setLightboxIndex(null);
+        setSelectedAlbum(null);
+        return;
+      }
+
+      // If state is album
+      if (state.view === 'album') {
+        setLightboxIndex(null);
+        if (state.albumId) {
+           const album = familyAlbums.find(a => a.id === state.albumId);
+           if (album) setSelectedAlbum(album);
+        }
+      }
+
+      // If state is lightbox
+      if (state.view === 'lightbox') {
+         if (typeof state.index === 'number') {
+            setLightboxIndex(state.index);
+         }
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    
+    // Set initial state to gallery if no state exists
+    if (!window.history.state) {
+       window.history.replaceState({ view: 'gallery' }, '', '');
+    }
+
+    return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
   // --- Auth Handlers ---
@@ -50,30 +87,35 @@ const App: React.FC = () => {
   const handleAlbumSelect = (album: Album) => {
     window.scrollTo(0, 0);
     setSelectedAlbum(album);
+    window.history.pushState({ view: 'album', albumId: album.id }, '', `#album-${album.id}`);
   };
 
   const handleBackToGallery = () => {
-    setSelectedAlbum(null);
-    setLightboxIndex(null);
+    window.history.back();
   };
 
   const handleOpenLightbox = (index: number) => {
     setLightboxIndex(index);
+    window.history.pushState({ view: 'lightbox', index }, '', `#media-${index}`);
   };
 
   const handleCloseLightbox = () => {
-    setLightboxIndex(null);
+    window.history.back();
   };
 
   const handleNextMedia = () => {
     if (selectedAlbum && lightboxIndex !== null && lightboxIndex < selectedAlbum.media.length - 1) {
-      setLightboxIndex(lightboxIndex + 1);
+      const newIndex = lightboxIndex + 1;
+      setLightboxIndex(newIndex);
+      window.history.replaceState({ view: 'lightbox', index: newIndex }, '', `#media-${newIndex}`);
     }
   };
 
   const handlePrevMedia = () => {
     if (lightboxIndex !== null && lightboxIndex > 0) {
-      setLightboxIndex(lightboxIndex - 1);
+      const newIndex = lightboxIndex - 1;
+      setLightboxIndex(newIndex);
+      window.history.replaceState({ view: 'lightbox', index: newIndex }, '', `#media-${newIndex}`);
     }
   };
 

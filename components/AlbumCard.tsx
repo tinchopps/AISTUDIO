@@ -17,14 +17,20 @@ export const AlbumCard: React.FC<AlbumCardProps> = ({ album, onClick }) => {
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       onClick={() => onClick(album)}
-      className="group w-full text-left bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-sepia-200 hover:border-sepia-400 transition-colors focus:outline-none focus:ring-4 focus:ring-sepia-400"
+      className={`group w-full text-left bg-white rounded-2xl shadow-lg overflow-hidden border-2 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-sepia-400 ${
+        album.isLegendary 
+          ? 'border-yellow-500 shadow-xl shadow-yellow-500/20 hover:border-yellow-400 hover:shadow-yellow-500/40' 
+          : 'border-sepia-200 hover:border-sepia-400'
+      }`}
       aria-label={`Abrir álbum: ${album.title}`}
     >
       <div className="relative aspect-[4/3] w-full bg-sepia-100 overflow-hidden">
         <img
           src={coverSrc}
           alt=""
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
+          className={`w-full h-full transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100 ${
+            album.isLegendary ? 'object-contain' : 'object-cover'
+          }`}
           loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-sepia-900/70 to-transparent" />
