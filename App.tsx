@@ -217,7 +217,7 @@ const App: React.FC = () => {
           // Albums List View
           <div className="space-y-6 animate-in fade-in duration-500">
             <p className="text-lg md:text-2xl text-sepia-700 mb-6 md:mb-8 max-w-2xl">
-              Bienvenida. Seleccione un álbum para ver las fotos y videos de la familia.
+              Hola. Seleccione un álbum para ver las fotos y videos de la familia.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {familyAlbums.map((album) => (
