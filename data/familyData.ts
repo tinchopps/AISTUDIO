@@ -2558,7 +2558,6 @@ export const familyAlbums: Album[] = [
       { id: '1g-9NyNGVHjb9hVpHvwmYOipqs141k7Gj', type: MediaType.PHOTO, url: 'https://drive.google.com/file/d/1g-9NyNGVHjb9hVpHvwmYOipqs141k7Gj/view?usp=drive_link' },
       { id: '1esY4JuO5ByON0Z-S5nu5EdYdzvbBxUxj', type: MediaType.PHOTO, url: 'https://drive.google.com/file/d/1esY4JuO5ByON0Z-S5nu5EdYdzvbBxUxj/view?usp=drive_link' },
       { id: '1eG7QtOuYNByS4KRyklRtcgfNy1YEa0sI', type: MediaType.PHOTO, url: 'https://drive.google.com/file/d/1eG7QtOuYNByS4KRyklRtcgfNy1YEa0sI/view?usp=drive_link' },
-      { id: '1dt0x2l6Ty31eU45EFnPcMU3VHwjq1B6F', type: MediaType.PHOTO, url: 'https://drive.google.com/file/d/1dt0x2l6Ty31eU45EFnPcMU3VHwjq1B6F/view?usp=drive_link' },
       { id: '1ddnI4D--MhXGUOgrHddTs6it09_jcloB', type: MediaType.PHOTO, url: 'https://drive.google.com/file/d/1ddnI4D--MhXGUOgrHddTs6it09_jcloB/view?usp=drive_link' },
       { id: '1d_VyIx0vJjwAYVcRNbB3B-fkZBEgypCk', type: MediaType.PHOTO, url: 'https://drive.google.com/file/d/1d_VyIx0vJjwAYVcRNbB3B-fkZBEgypCk/view?usp=drive_link' },
       { id: '1d5thxf_N8OqedccQ7YqtioSkInAhe-FQ', type: MediaType.PHOTO, url: 'https://drive.google.com/file/d/1d5thxf_N8OqedccQ7YqtioSkInAhe-FQ/view?usp=drive_link' },
