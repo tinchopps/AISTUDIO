@@ -203,7 +203,6 @@ export const familyAlbums: Album[] = [
       { id: 'n08_1', type: MediaType.PHOTO, url: 'https://drive.google.com/open?id=1fFIWs-ejzW0p8pYQZiYZuKaNIXZCT0jb' },
       { id: 'n08_2', type: MediaType.PHOTO, url: 'https://drive.google.com/open?id=1kjpcbBorv3-q8l8tTk84bOE1Ct5iA5EL' },
       { id: 'n08_3', type: MediaType.PHOTO, url: 'https://drive.google.com/open?id=1QIL61OBf0WgWQhDJrgSxOXVW5XayQi3M' },
-      { id: 'n08_4', type: MediaType.PHOTO, url: 'https://drive.google.com/open?id=10caGf64VrLeg4bNR-rQPYk6ftQgpjVP' },
       { id: 'n08_5', type: MediaType.PHOTO, url: 'https://drive.google.com/open?id=1VrhVRLEnZQBZ09qIrMdp5SSynBS5RjbF' },
       { id: 'n08_6', type: MediaType.PHOTO, url: 'https://drive.google.com/open?id=1QL5NfHEyRfZXYnpdpiwpLrl2eY0t_IBJ' },
       { id: 'n08_7', type: MediaType.PHOTO, url: 'https://drive.google.com/open?id=1A_V1szD3mQOlq1EtRsyOFQEkLE1xD-ow' },
